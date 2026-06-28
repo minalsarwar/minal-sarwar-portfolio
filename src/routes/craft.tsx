@@ -14,60 +14,103 @@ export const Route = createFileRoute("/craft")({
   component: CraftPage,
 });
 
-const projects = [
+type Project = {
+  n: string;
+  name: string;
+  role: string;
+  overview: string;
+  problem: string;
+  process: string;
+  outcome: string;
+  link?: { href: string; label: string };
+};
+
+const projects: Project[] = [
   {
     n: "01",
     name: "NayaPay Business Portal",
     role: "Associate Product Manager · Web",
-    overview: "Web operations hub for merchants and businesses on NayaPay — payments, payouts, team management and reporting.",
-    problem: "Owners and operators needed a calm, trustworthy place to run their money — without the heaviness of legacy banking dashboards.",
-    process: "Discovery interviews, journey mapping, PRDs, weekly design partnership, phased launches with telemetry.",
-    outcome: "Shipped across several releases with improved task completion and visibly fewer support tickets on core flows.",
+    overview:
+      "Web operations hub for NayaPay Business merchants. Spearheaded the Sales module (invoicing and payment links) from scratch and shipped Transactions, Approvals and Merchant Payments with partners like StormFiber, Fly Jinnah and M-Tag.",
+    problem:
+      "Owners and operators needed a calm, trustworthy place to run their money, without the heaviness of legacy banking dashboards.",
+    process:
+      "Market research, competitor teardowns, 50+ Figma wireframes, PRDs, prioritisation in Redmine across 100+ tickets, and weekly design partnership.",
+    outcome:
+      "Sales launched end to end. Onboarded 20+ alpha merchants with feedback loops that lifted usability roughly 10% on key modules pre launch.",
   },
   {
     n: "02",
     name: "NayaPay Business App",
     role: "Associate Product Manager · Mobile",
-    overview: "Mobile companion for owners on the move — quick approvals, real-time activity, push-first updates.",
-    problem: "Mobile is where business owners actually live. The portal didn’t feel right on a phone — and shouldn’t.",
-    process: "Mobile-first re-thinking of the core flows. Wireframes, prioritised backlog, beta cohorts, post-launch listening.",
-    outcome: "A native-feeling app with thoughtful empty states and the kind of microcopy that quietly builds trust.",
+    overview:
+      "Mobile companion for owners on the move. Shipped every module from scratch: dashboard, sign up, onboarding, splash, transactions, cards and approvals, with detailed PRDs and tickets.",
+    problem:
+      "Mobile is where business owners actually live. The portal didn’t feel right on a phone, and shouldn’t.",
+    process:
+      "Mobile first rethinking of the core flows. Wireframes, prioritised backlog, alpha cohorts, and post launch listening with the team.",
+    outcome:
+      "A native feeling app with thoughtful empty states and the kind of microcopy that quietly builds trust.",
   },
   {
     n: "03",
     name: "Inspire CRM User Journeys",
     role: "Business Analyst · Ignite Labs",
-    overview: "End-to-end CRM journeys for sales and support — built around the people doing the work, not the org chart.",
-    problem: "Workflows were jumping between tools and tabs. Information was getting lost between handoffs.",
-    process: "Stakeholder interviews, swimlane maps, feature definition, UX recommendations with engineering.",
-    outcome: "Cleaner workflows, fewer handoff bugs, and a CRM that finally matched how the team actually worked.",
+    overview:
+      "End to end CRM journeys for sales and support, built around the people doing the work, not the org chart.",
+    problem:
+      "Workflows were jumping between tools and tabs. Information was getting lost between handoffs.",
+    process:
+      "Stakeholder interviews, swimlane maps, feature definition, UX recommendations with engineering.",
+    outcome:
+      "Cleaner workflows, fewer handoff bugs, and a CRM that finally matched how the team actually worked.",
   },
   {
     n: "04",
     name: "Revamping SureCompute Website",
     role: "Product · Brand · IA",
-    overview: "Full reimagining of the SureCompute marketing site — content strategy, IA and a refreshed brand surface.",
-    problem: "A growing company stuck behind a website that no longer reflected what they did.",
-    process: "Content audit, IA reshuffle, wireframes, design partnership and a launch plan.",
-    outcome: "A site that actually invites people in — and gives sales a story they can point to.",
+    overview:
+      "Full reimagining of the SureCompute marketing site, content strategy, IA and a refreshed brand surface.",
+    problem:
+      "A growing company stuck behind a website that no longer reflected what they did.",
+    process:
+      "Content audit, IA reshuffle, wireframes, design partnership and a launch plan.",
+    outcome:
+      "A site that actually invites people in, and gives sales a story they can point to.",
   },
   {
     n: "05",
     name: "Dua Pal",
-    role: "Side project · Concept",
-    overview: "A gentle daily companion for duas — calm typography, generous spacing, no streaks shouting at you.",
-    problem: "Most spiritual apps feel like productivity tools wearing different clothes.",
-    process: "Personal research, mood boards, wireframes, slow iteration.",
-    outcome: "A small, careful product I’m proud of even in its quiet form.",
+    role: "Side project · Flutter",
+    overview:
+      "A gentle daily companion for duas built in Flutter with Firebase and Riverpod. Favourites, a thought journal, Islamic reminders and audio playback, wrapped in calm typography and generous spacing.",
+    problem:
+      "Most spiritual apps feel like productivity tools wearing different clothes.",
+    process:
+      "Personal research, mood boards, wireframes, Flutter + Firestore build, slow iteration.",
+    outcome:
+      "A small, careful product I’m proud of, with a quiet, opinionated feel to it.",
+    link: {
+      href: "https://www.linkedin.com/posts/minalsarwar_flutter-firebase-firestore-ugcPost-7205272041405460480-h1ig/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADyNRgoBopDRxNbqIwIDVfiRIY_j7ZmyQYk",
+      label: "See the Dua Pal build on LinkedIn",
+    },
   },
   {
     n: "06",
     name: "DhikrBloom",
-    role: "Side project · Concept",
-    overview: "Visual dhikr counter that grows a small garden as you remember — softness as a habit loop.",
-    problem: "Counters are functional. Habits are emotional.",
-    process: "Concept sketches, interaction prototypes, motion studies.",
-    outcome: "A reminder that delight isn’t decoration — it’s the reason people come back.",
+    role: "Side project · AI vibe code",
+    overview:
+      "A personal AI vibe coded dhikr counter. Switchable colour themes, custom dhikrs, a soft ripple when you tap the centre, and a celebratory confetti moment when you hit your target.",
+    problem:
+      "Counters are functional. Habits are emotional.",
+    process:
+      "Concept sketches, AI assisted prototyping, motion studies, and a lot of small interaction polish.",
+    outcome:
+      "A reminder that delight isn’t decoration, it’s the reason people come back.",
+    link: {
+      href: "https://dhikr-bloom.vercel.app/",
+      label: "Try DhikrBloom",
+    },
   },
 ];
 
@@ -78,13 +121,12 @@ function CraftPage() {
         <Reveal>
           <SectionLabel>Things I’ve built</SectionLabel>
           <h1 className="max-w-4xl font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1] tracking-tight text-balance">
-            Craft —
-            <span className="italic text-muted-foreground"> the work, in its own words</span>.
+            Craft,
+            <span className="italic bg-gradient-to-r from-lavender via-pink-400 to-sky-400 bg-clip-text text-transparent"> the work, in its own words</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             A small but honest archive. Each card has space for the overview,
-            the problem, the process and the outcome — and the screenshots that
-            tell the rest.
+            the problem, the process and the outcome.
           </p>
         </Reveal>
       </section>
@@ -94,57 +136,56 @@ function CraftPage() {
           {projects.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.03}>
               <article
-                className="group relative grid overflow-hidden rounded-[2rem] border border-border/70 bg-card transition-all duration-500 hover:-translate-y-0.5 hover:shadow-float sm:grid-cols-[1.05fr_1fr]"
+                className="group relative overflow-hidden rounded-[2rem] border border-lavender/20 bg-card p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-lavender/40 hover:shadow-float sm:p-10"
                 data-cursor="hover"
               >
-                <div className="p-7 sm:p-10">
-                  <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                      Project · {p.n}
-                    </span>
-                    <ArrowUpRight
-                      size={18}
-                      className="text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground"
-                    />
-                  </div>
+                <div
+                  className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
+                  style={{ background: "color-mix(in oklab, var(--lavender) 60%, transparent)" }}
+                />
 
-                  <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
-                    {p.name}
-                  </h2>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
-
-                  <dl className="mt-8 grid gap-5 sm:grid-cols-2">
-                    <Field term="Overview" desc={p.overview} />
-                    <Field term="Problem" desc={p.problem} />
-                    <Field term="Process" desc={p.process} />
-                    <Field term="Outcome" desc={p.outcome} />
-                  </dl>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                    Project · {p.n}
+                  </span>
+                  <ArrowUpRight
+                    size={18}
+                    className="text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lavender"
+                  />
                 </div>
 
-                <div className="relative min-h-[280px] overflow-hidden border-t border-border/70 sm:border-l sm:border-t-0">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,color-mix(in_oklab,var(--lavender)_28%,transparent),transparent_60%)]" />
-                  <div className="absolute inset-0 grain" />
-                  <div className="absolute inset-6 rounded-2xl border border-dashed border-border/70 bg-background/40" />
-                  <div className="absolute inset-0 grid place-items-center">
-                    <span className="font-display text-[6rem] leading-none tracking-tight text-foreground/10 sm:text-[9rem]">
-                      {p.n}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-7 left-7 right-7 flex items-center justify-between text-xs uppercase tracking-[0.18em] text-muted-foreground">
-                    <span>image space</span>
-                    <span>coming soon</span>
-                  </div>
-                </div>
+                <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
+                  {p.name}
+                </h2>
+                <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
+
+                <dl className="mt-8 grid gap-5 sm:grid-cols-2">
+                  <Field term="Overview" desc={p.overview} />
+                  <Field term="Problem" desc={p.problem} />
+                  <Field term="Process" desc={p.process} />
+                  <Field term="Outcome" desc={p.outcome} />
+                </dl>
+
+                {p.link && (
+                  <a
+                    href={p.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 transition-colors hover:decoration-lavender"
+                  >
+                    {p.link.label} <ArrowUpRight size={14} />
+                  </a>
+                )}
               </article>
             </Reveal>
           ))}
         </ul>
 
         <Reveal className="mt-16">
-          <div className="flex items-center justify-between rounded-3xl border border-border/70 bg-card p-8">
+          <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-lavender/30 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 p-8 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5">
             <p className="max-w-xl font-display text-2xl tracking-tight sm:text-3xl">
-              Want to see the case studies in more depth?
-              <span className="text-muted-foreground"> Reach out and I’ll walk you through.</span>
+              Interested in diving deeper or hearing the longer story?
+              <span className="text-muted-foreground"> Reach out and I’ll happily walk you through.</span>
             </p>
             <Link
               to="/contact"
@@ -162,7 +203,7 @@ function CraftPage() {
 function Field({ term, desc }: { term: string; desc: string }) {
   return (
     <div>
-      <dt className="font-mono text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
+      <dt className="font-mono text-[10px] uppercase tracking-[0.22em] text-lavender">
         {term}
       </dt>
       <dd className="mt-1.5 text-sm leading-relaxed text-foreground/80">{desc}</dd>
