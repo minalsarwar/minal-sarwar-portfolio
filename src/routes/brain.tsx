@@ -93,7 +93,7 @@ function BrainPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             Less of a portfolio, more of a process. Here are the stages I move
-            through on most products — with room for the screenshots, PRDs and
+            through on most products, with room for the screenshots, PRDs and
             flows that go with each one.
           </p>
         </Reveal>
