@@ -5,9 +5,9 @@ export const Route = createFileRoute("/experience")({
   head: () => ({
     meta: [
       { title: "Experience — Minal" },
-      { name: "description", content: "Work experience across NayaPay, Foodpanda and Ignite Labs — product, data and business analysis." },
+      { name: "description", content: "Work experience across NayaPay, Foodpanda and Ignite Labs in product, data and business analysis." },
       { property: "og:title", content: "Experience — Minal" },
-      { property: "og:description", content: "Three roles, one through-line: making complex things feel obvious." },
+      { property: "og:description", content: "Three roles, one through line: making complex things feel obvious." },
     ],
   }),
   component: ExperiencePage,
@@ -17,15 +17,15 @@ const roles = [
   {
     company: "NayaPay",
     role: "Associate Product Manager",
-    range: "2024 — Now",
+    range: "2024 — 2025",
     summary:
-      "Shipping fintech products for NayaPay Business across web and mobile — owning discovery through launch.",
+      "Shipped B2B fintech products for NayaPay Business across web and mobile, owning discovery through launch.",
     pillars: [
       "Product strategy",
       "User research",
       "Wireframes",
       "PRDs",
-      "Cross-functional collaboration",
+      "Cross functional collaboration",
       "Product launches",
       "Testing & iteration",
     ],
@@ -33,22 +33,21 @@ const roles = [
   {
     company: "Foodpanda",
     role: "Data Analytics Intern",
-    range: "2023",
+    range: "Summer 2023",
     summary:
-      "Worked on automation and image-quality detection across the menu catalogue — turning messy ops data into decisions.",
+      "Worked on automation and image quality detection across the menu catalogue, turning messy ops data into decisions.",
     pillars: [
-      "Automation",
+      "Python & Selenium automation",
       "Duplicate image detection",
-      "Analytical problem-solving",
-      "Operational dashboards",
+      "Analytical problem solving",
     ],
   },
   {
     company: "Ignite Labs",
     role: "Business Analyst Intern",
-    range: "2022",
+    range: "Summer 2022",
     summary:
-      "Defined product features and end-to-end CRM journeys with the team — first taste of what product would later become.",
+      "Defined product features and end to end CRM journeys with the team, first taste of what product would later become.",
     pillars: [
       "Feature definition",
       "User journeys",
@@ -66,7 +65,7 @@ function ExperiencePage() {
           <SectionLabel>Experience</SectionLabel>
           <h1 className="max-w-4xl font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1] tracking-tight text-balance">
             Three rooms,
-            <span className="italic text-muted-foreground"> one through-line</span>.
+            <span className="italic bg-gradient-to-r from-lavender to-pink-400 bg-clip-text text-transparent"> one through line</span>.
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             Different titles, same instinct: figure out what people actually
@@ -77,17 +76,17 @@ function ExperiencePage() {
 
       <section className="mx-auto max-w-6xl px-6 pb-32">
         <ol className="relative">
-          <div className="pointer-events-none absolute left-4 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-border via-border/70 to-transparent sm:left-6" />
+          <div className="pointer-events-none absolute left-4 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-lavender via-lavender/50 to-transparent sm:left-6" />
           {roles.map((r, i) => (
             <li key={r.company} className="relative pl-12 sm:pl-20">
               <Reveal y={28}>
-                <span className="absolute left-[10px] top-3 grid h-4 w-4 place-items-center rounded-full border border-border bg-background sm:left-[18px]">
+                <span className="absolute left-[10px] top-3 grid h-4 w-4 place-items-center rounded-full border border-lavender/60 bg-background sm:left-[18px]">
                   <span className="h-1.5 w-1.5 rounded-full bg-lavender" />
                 </span>
 
                 <div className="grid gap-6 pb-16 sm:grid-cols-[1fr_1.4fr] sm:gap-12">
                   <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
                       {r.range}
                     </p>
                     <h2 className="mt-2 font-display text-4xl tracking-tight sm:text-5xl">
@@ -104,7 +103,7 @@ function ExperiencePage() {
                       {r.pillars.map((p) => (
                         <li
                           key={p}
-                          className="rounded-full border border-border/60 bg-card px-3.5 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-lavender/60 hover:bg-lavender/10"
+                          className="rounded-full border border-lavender/30 bg-card px-3.5 py-1.5 text-xs font-medium text-foreground/80 transition-colors hover:border-lavender hover:bg-lavender/15"
                           data-cursor="hover"
                         >
                           {p}
