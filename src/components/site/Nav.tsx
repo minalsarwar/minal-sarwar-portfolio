@@ -59,7 +59,7 @@ export function Nav() {
               m
             </span>
             <span className="hidden text-sm font-medium tracking-tight sm:inline">
-              Minal <span className="text-muted-foreground">— APM</span>
+              Minal <span className="text-lavender">· APM</span>
             </span>
           </Link>
 
