@@ -15,7 +15,7 @@ export const Route = createFileRoute("/story")({
 
 const chapters = [
   {
-    year: "2020 — 2024",
+    year: "2020 to 2024",
     title: "Computer Science",
     place: "IBA Karachi",
     body:
@@ -54,7 +54,7 @@ const chapters = [
     image: "https://www.foodpanda.com/wp-content/uploads/2023/07/FOODPANDA_exploring.png",
   },
   {
-    year: "2024 — 2025",
+    year: "2024 to 2025",
     title: "Associate Product Manager",
     place: "NayaPay",
     body:

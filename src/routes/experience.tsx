@@ -17,7 +17,7 @@ const roles = [
   {
     company: "NayaPay",
     role: "Associate Product Manager",
-    range: "2024 — 2025",
+    range: "2024 to 2025",
     summary:
       "Shipped B2B fintech products for NayaPay Business across web and mobile, owning discovery through launch.",
     pillars: [
