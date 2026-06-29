@@ -71,19 +71,6 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10 grain" />
 
       <div className="mx-auto max-w-6xl px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-10 inline-flex items-center gap-2 rounded-full border border-lavender/40 bg-card/60 px-3.5 py-1.5 text-xs font-medium text-foreground/70 backdrop-blur"
-        >
-          <span className="relative grid h-2 w-2 place-items-center">
-            <span className="absolute h-2 w-2 rounded-full bg-lavender opacity-70 animate-ping" />
-            <span className="h-1.5 w-1.5 rounded-full bg-lavender" />
-          </span>
-          Associate Product Manager · Karachi
-        </motion.div>
-
         <div className="min-h-[260px] sm:min-h-[320px]">
           <AnimatePresence mode="wait">
             {stage === "questions" ? (
@@ -110,8 +97,6 @@ function Hero() {
                   Hi, I’m Minal.
                 </p>
                 <h1 className="mt-4 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.95] tracking-tight text-balance">
-                  Associate
-                  <br />
                   <span className="italic bg-gradient-to-r from-lavender via-pink-400 to-sky-400 bg-clip-text text-transparent">Product</span>{" "}
                   Manager
                   <span className="ml-2 inline-block h-3 w-3 translate-y-[-0.6em] rounded-full bg-lavender align-middle" />
@@ -121,6 +106,7 @@ function Hero() {
           </AnimatePresence>
         </div>
 
+
         <div className="mt-12 grid gap-10 md:grid-cols-[1.4fr_1fr]">
           <Reveal delay={0.2}>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
@@ -128,7 +114,7 @@ function Hero() {
               <span className="text-foreground">IBA Karachi</span> who took the long way
               into product, through business analysis, then data analytics at{" "}
               <span className="text-foreground">Foodpanda</span>, building a fraud
-              detection system for my final year, and most recently shipping B2B fintech for{" "}
+              detection system for my final year project, and most recently shipping B2B fintech for{" "}
               <span className="text-foreground">NayaPay Business</span> on web and
               mobile. I think a lot about why some things feel obvious to use, and
               quietly enjoy the days a tiny UI detail clicks into place.
