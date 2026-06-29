@@ -72,23 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Minal — Associate Product Manager" },
-      {
-        name: "description",
-        content:
-          "Portfolio of Minal, an Associate Product Manager shipping fintech products at NayaPay. Strategy, research, PRDs, and craft.",
-      },
-      { name: "author", content: "Minal" },
-      { property: "og:title", content: "Minal — Associate Product Manager" },
-      {
-        property: "og:description",
-        content: "Thoughtful product work at the intersection of users, business and engineering.",
-      },
+      { title: "Minal Sarwar | Portfolio" },
+      { name: "author", content: "Minal Sarwar" },
+      { property: "og:title", content: "Minal Sarwar | Portfolio" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "/__l5e/assets-v1/196cf2b7-f99b-4107-aca3-7c6068f5d0d9/minal-og.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Minal Sarwar | Portfolio" },
+      { name: "twitter:image", content: "/__l5e/assets-v1/196cf2b7-f99b-4107-aca3-7c6068f5d0d9/minal-og.jpg" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

@@ -5,7 +5,6 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 const links = [
   { to: "/", label: "Home" },
   { to: "/story", label: "Story" },
-  { to: "/brain", label: "Product Brain" },
   { to: "/experience", label: "Experience" },
   { to: "/craft", label: "Craft" },
   { to: "/skills", label: "Skills" },
@@ -55,11 +54,17 @@ export function Nav() {
           }`}
         >
           <Link to="/" className="group flex items-center gap-2.5">
-            <span className="grid h-8 w-8 place-items-center rounded-full bg-foreground text-background text-sm font-display">
+            <span
+              className="grid h-8 w-8 place-items-center rounded-full text-sm font-display text-foreground"
+              style={{
+                background:
+                  "linear-gradient(135deg, #C8B6FF 0%, #F9A8D4 50%, #7DD3FC 100%)",
+              }}
+            >
               m
             </span>
             <span className="hidden text-sm font-medium tracking-tight sm:inline">
-              Minal <span className="text-lavender">· APM</span>
+              Minal Sarwar
             </span>
           </Link>
 

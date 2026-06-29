@@ -32,7 +32,6 @@ const chapters = [
     accent: "First time saying ‘why?’ in a meeting.",
     image:
       "https://media.licdn.com/dms/image/v2/C4E0BAQFNnkxz4BjNSw/company-logo_200_200/company-logo_200_200/0/1630607600261/ignite_labs_pk_logo?e=2147483647&v=beta&t=8PLhkNbJCf-dfAcalXkUUjR6usNSi6rhc19ZaPi225Y",
-    contain: true,
   },
   {
     year: "Summer · 2023",
@@ -41,7 +40,7 @@ const chapters = [
     body:
       "Automated duplicate image detection across thousands of restaurant menus and dug into operational signals. Numbers stopped being scary and started being useful.",
     accent: "Where I learned to trust the dashboard, gently.",
-    image: "https://logos-world.net/wp-content/uploads/2021/02/Foodpanda-Logo.png",
+    image: "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/dten/2022/05/15/pau-pau-lands-in-bangladesh-1.jpeg",
     contain: true,
   },
   {
@@ -69,8 +68,6 @@ const chapters = [
     body:
       "Something that asks better questions. Something that takes craft seriously. Coffee chats welcome.",
     accent: "To be continued.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5612AQH9uIQNd_kMAg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1688675969171?e=2147483647&v=beta&t=SvkewI47pyJchqmarZUOoLE_otAMI4sfvIQpVYuxa0w",
   },
 ];
 
@@ -98,6 +95,33 @@ function StoryPage() {
           <ul className="space-y-12 sm:space-y-20">
             {chapters.map((c, i) => {
               const left = i % 2 === 0;
+              const hasImage = "image" in c && c.image;
+              if (!hasImage) {
+                return (
+                  <li key={c.title} className="relative">
+                    <Reveal y={30}>
+                      <div className="mx-auto max-w-2xl text-center">
+                        <p className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                          {c.year}
+                        </p>
+                        <h2 className="mt-2 font-display text-3xl tracking-tight sm:text-4xl">
+                          {c.title}
+                        </h2>
+                        <p className="mt-1 text-sm text-muted-foreground">{c.place}</p>
+                        <p className="mt-4 text-base leading-relaxed text-foreground/80">
+                          {c.body}
+                        </p>
+                        <p className="mt-3 font-display text-lg italic text-lavender">
+                          {c.accent}
+                        </p>
+                      </div>
+                    </Reveal>
+                    <div className="pointer-events-none absolute left-[14px] top-2 hidden h-3 w-3 rounded-full border border-border bg-background sm:left-1/2 sm:block sm:-translate-x-1/2">
+                      <span className="absolute inset-[3px] rounded-full bg-lavender" />
+                    </div>
+                  </li>
+                );
+              }
               return (
                 <li key={c.title} className="relative">
                   <div className={`grid gap-6 sm:grid-cols-2 sm:gap-12 ${left ? "" : "sm:[&>*:first-child]:order-2"}`}>
@@ -126,11 +150,11 @@ function StoryPage() {
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5" />
                         <img
-                          src={c.image}
+                          src={(c as { image: string }).image}
                           alt={`${c.title} at ${c.place}`}
                           loading="lazy"
                           className={`absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105 ${
-                            c.contain ? "object-contain p-10" : "object-cover"
+                            "contain" in c && c.contain ? "object-contain p-10" : "object-cover"
                           }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />

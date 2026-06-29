@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { PageWrap, Reveal, SectionLabel } from "../components/site/Reveal";
 
@@ -31,26 +31,30 @@ const projects: Project[] = [
     name: "NayaPay Business Portal",
     role: "Associate Product Manager · Web",
     overview:
-      "Web operations hub for NayaPay Business merchants. Spearheaded the Sales module (invoicing and payment links) from scratch and shipped Transactions, Approvals and Merchant Payments with partners like StormFiber, Fly Jinnah and M-Tag.",
+      "Web operations hub for NayaPay Business merchants. Spearheaded the Sales module (invoicing and payment links) end to end and shipped Transactions, Approvals and Merchant Payments integrating major partners like StormFiber, Fly Jinnah and M-Tag. Also led the rebranding of major modules across the portal and contributed to Disbursements as an upcoming feature.",
     problem:
-      "Owners and operators needed a calm, trustworthy place to run their money, without the heaviness of legacy banking dashboards.",
+      "Business owners and teams, from sole proprietors to LLP and partnership setups, small businesses to enterprise level, were looking for one calm place to manage expenses, bills, invoicing, business cards and team usage. They needed a proper approval hierarchy and defined user roles like admin, finance, sales and approver, each with the right functions, without the heaviness of legacy banking dashboards.",
     process:
-      "Market research, competitor teardowns, 50+ Figma wireframes, PRDs, prioritisation in Redmine across 100+ tickets, and weekly design partnership.",
+      "Market research, competitor teardowns, 50+ Figma wireframes mapping user flows across modules, detailed PRDs, prioritisation in Redmine across 100+ tickets, Notion for documentation and Excel for data analysis, with weekly partnership across design, dev and marketing.",
     outcome:
-      "Sales launched end to end. Onboarded 20+ alpha merchants with feedback loops that lifted usability roughly 10% on key modules pre launch.",
+      "Sales shipped from scratch including research, wireframes, launch and testing. Rigorous iteration across most modules, a portal-wide rebrand, more merchants onboarded, and the product moved noticeably closer to going live for business.",
+    link: {
+      href: "https://www.nayapay.com/business",
+      label: "Product overview · NayaPay Business",
+    },
   },
   {
     n: "02",
     name: "NayaPay Business App",
     role: "Associate Product Manager · Mobile",
     overview:
-      "Mobile companion for owners on the move. Shipped every module from scratch: dashboard, sign up, onboarding, splash, transactions, cards and approvals, with detailed PRDs and tickets.",
+      "A more accessible form of the portal, on the phone. Shipped every module from scratch including dashboard, sign up, onboarding, splash screen, transactions, cards and approvals, with detailed PRDs and tickets.",
     problem:
-      "Mobile is where business owners actually live. The portal didn’t feel right on a phone, and shouldn’t.",
+      "Once merchants signed up on the portal, they needed quick approvals, a fast review of transactions and a clean overview of expense management while on the go. Core functionality like onboarding stayed on the portal, but the app had to make the daily essentials feel one tap away.",
     process:
-      "Mobile first rethinking of the core flows. Wireframes, prioritised backlog, alpha cohorts, and post launch listening with the team.",
+      "Mobile first rethinking of the core flows, wireframes, prioritised backlog, alpha cohorts and post launch listening with the team.",
     outcome:
-      "A native feeling app with thoughtful empty states and the kind of microcopy that quietly builds trust.",
+      "A native feeling companion app with thoughtful empty states, quick actions for approvals and review, and microcopy that quietly builds trust between sessions.",
   },
   {
     n: "03",
@@ -70,13 +74,13 @@ const projects: Project[] = [
     name: "Revamping SureCompute Website",
     role: "Product · Brand · IA",
     overview:
-      "Full reimagining of the SureCompute marketing site, content strategy, IA and a refreshed brand surface.",
+      "Full reimagining of the SureCompute marketing site, content strategy, IA, SEO and a refreshed brand surface.",
     problem:
-      "A growing company stuck behind a website that no longer reflected what they did.",
+      "A growing company stuck behind a website that no longer reflected what they did, with no real story for their plans or services.",
     process:
-      "Content audit, IA reshuffle, wireframes, design partnership and a launch plan.",
+      "Competitor analysis of Hostinger and similar services, proper SEO pass, wireframing and ideation on Figma, sitting with designers to modify the look and feel of the UI, and designing the pricing plans UI as a new feature from scratch before handing it over for refinement.",
     outcome:
-      "A site that actually invites people in, and gives sales a story they can point to.",
+      "A site that actually invites people in, a clearer pricing story, and a brand surface sales can finally point to.",
   },
   {
     n: "05",
@@ -134,65 +138,111 @@ function CraftPage() {
       <section className="mx-auto max-w-6xl px-6 pb-32">
         <ul className="space-y-6">
           {projects.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.03}>
-              <article
-                className="group relative overflow-hidden rounded-[2rem] border border-lavender/20 bg-card p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-lavender/40 hover:shadow-float sm:p-10"
-                data-cursor="hover"
-              >
-                <div
-                  className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
-                  style={{ background: "color-mix(in oklab, var(--lavender) 60%, transparent)" }}
-                />
-
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
-                    Project · {p.n}
-                  </span>
-                  <ArrowUpRight
-                    size={18}
-                    className="text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lavender"
+            <div key={p.name}>
+              <Reveal delay={i * 0.03}>
+                <article
+                  className="group relative overflow-hidden rounded-[2rem] border border-lavender/20 bg-card p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-lavender/40 hover:shadow-float sm:p-10"
+                  data-cursor="hover"
+                >
+                  <div
+                    className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
+                    style={{ background: "color-mix(in oklab, var(--lavender) 60%, transparent)" }}
                   />
-                </div>
 
-                <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
-                  {p.name}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                      Project · {p.n}
+                    </span>
+                  </div>
 
-                <dl className="mt-8 grid gap-5 sm:grid-cols-2">
-                  <Field term="Overview" desc={p.overview} />
-                  <Field term="Problem" desc={p.problem} />
-                  <Field term="Process" desc={p.process} />
-                  <Field term="Outcome" desc={p.outcome} />
-                </dl>
+                  <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
+                    {p.name}
+                  </h2>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
 
-                {p.link && (
-                  <a
-                    href={p.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 transition-colors hover:decoration-lavender"
-                  >
-                    {p.link.label} <ArrowUpRight size={14} />
-                  </a>
-                )}
-              </article>
-            </Reveal>
+                  <dl className="mt-8 grid gap-5 sm:grid-cols-2">
+                    <Field term="Overview" desc={p.overview} />
+                    <Field term="Problem" desc={p.problem} />
+                    <Field term="Process" desc={p.process} />
+                    <Field term="Outcome" desc={p.outcome} />
+                  </dl>
+
+                  {p.link && (
+                    <a
+                      href={p.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 transition-colors hover:decoration-lavender"
+                    >
+                      {p.link.label} <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </article>
+              </Reveal>
+
+              {p.n === "02" && (
+                <Reveal delay={0.05} className="mt-6">
+                  <div className="rounded-[2rem] border border-lavender/30 bg-gradient-to-br from-lavender/15 via-pink-100/25 to-sky-100/20 p-7 dark:from-lavender/10 dark:via-pink-500/5 dark:to-sky-500/5 sm:p-10">
+                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                      Highlights · during my tenure
+                    </span>
+                    <h3 className="mt-4 font-display text-2xl leading-snug tracking-tight sm:text-3xl">
+                      Two moments I’ll quietly carry with me.
+                    </h3>
+                    <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+                      <li className="rounded-2xl border border-lavender/20 bg-background/50 p-5">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-lavender">2024</p>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground/85">
+                          NayaPay was featured on the{" "}
+                          <a
+                            href="https://www.nayapay.com/news/nayapay-recognized-among-forbes-asia-100-to-watch"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 hover:decoration-lavender"
+                          >
+                            Forbes Asia 100 to Watch
+                          </a>{" "}
+                          list.
+                        </p>
+                      </li>
+                      <li className="rounded-2xl border border-lavender/20 bg-background/50 p-5">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-lavender">2025</p>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground/85">
+                          NayaPay{" "}
+                          <a
+                            href="https://www.nayapay.com/news/NayaPay-Reborn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 hover:decoration-lavender"
+                          >
+                            rebranded
+                          </a>{" "}
+                          both consumer and business verticals around the theme “We’ve gone electric”, and was awarded{" "}
+                          <a
+                            href="https://www.nayapay.com/news/nayapay-wins-emerging-brand-of-the-year-2025"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 hover:decoration-lavender"
+                          >
+                            Emerging Brand of the Year 2025
+                          </a>{" "}
+                          by Brands Foundation, Pakistan’s premier non profit organisation.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </Reveal>
+              )}
+            </div>
           ))}
         </ul>
 
         <Reveal className="mt-16">
-          <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-lavender/30 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 p-8 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5">
+          <div className="rounded-3xl border border-lavender/30 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 p-8 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5">
             <p className="max-w-xl font-display text-2xl tracking-tight sm:text-3xl">
               Interested in diving deeper or hearing the longer story?
               <span className="text-muted-foreground"> Reach out and I’ll happily walk you through.</span>
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background"
-            >
-              Get in touch <ArrowUpRight size={16} />
-            </Link>
           </div>
         </Reveal>
       </section>
