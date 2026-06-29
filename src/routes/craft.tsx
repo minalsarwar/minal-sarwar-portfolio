@@ -152,10 +152,6 @@ function CraftPage() {
                   <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
                     Project · {p.n}
                   </span>
-                  <ArrowUpRight
-                    size={18}
-                    className="text-muted-foreground transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lavender"
-                  />
                 </div>
 
                 <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
@@ -186,17 +182,11 @@ function CraftPage() {
         </ul>
 
         <Reveal className="mt-16">
-          <div className="flex flex-wrap items-center justify-between gap-6 rounded-3xl border border-lavender/30 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 p-8 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5">
+          <div className="rounded-3xl border border-lavender/30 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 p-8 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5">
             <p className="max-w-xl font-display text-2xl tracking-tight sm:text-3xl">
               Interested in diving deeper or hearing the longer story?
               <span className="text-muted-foreground"> Reach out and I’ll happily walk you through.</span>
             </p>
-            <Link
-              to="/contact"
-              className="inline-flex shrink-0 items-center gap-2 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background"
-            >
-              Get in touch <ArrowUpRight size={16} />
-            </Link>
           </div>
         </Reveal>
       </section>
