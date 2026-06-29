@@ -32,7 +32,6 @@ const chapters = [
     accent: "First time saying ‘why?’ in a meeting.",
     image:
       "https://media.licdn.com/dms/image/v2/C4E0BAQFNnkxz4BjNSw/company-logo_200_200/company-logo_200_200/0/1630607600261/ignite_labs_pk_logo?e=2147483647&v=beta&t=8PLhkNbJCf-dfAcalXkUUjR6usNSi6rhc19ZaPi225Y",
-    contain: true,
   },
   {
     year: "Summer · 2023",
@@ -41,7 +40,7 @@ const chapters = [
     body:
       "Automated duplicate image detection across thousands of restaurant menus and dug into operational signals. Numbers stopped being scary and started being useful.",
     accent: "Where I learned to trust the dashboard, gently.",
-    image: "https://logos-world.net/wp-content/uploads/2021/02/Foodpanda-Logo.png",
+    image: "https://ecdn.dhakatribune.net/contents/cache/images/800x450x1/uploads/dten/2022/05/15/pau-pau-lands-in-bangladesh-1.jpeg",
     contain: true,
   },
   {
