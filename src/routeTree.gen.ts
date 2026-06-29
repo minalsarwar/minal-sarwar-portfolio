@@ -15,7 +15,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ExperienceRouteImport } from './routes/experience'
 import { Route as CraftRouteImport } from './routes/craft'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as BrainRouteImport } from './routes/brain'
 import { Route as IndexRouteImport } from './routes/index'
 
 const StoryRoute = StoryRouteImport.update({
@@ -48,11 +47,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BrainRoute = BrainRouteImport.update({
-  id: '/brain',
-  path: '/brain',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -61,7 +55,6 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/brain': typeof BrainRoute
   '/contact': typeof ContactRoute
   '/craft': typeof CraftRoute
   '/experience': typeof ExperienceRoute
@@ -71,7 +64,6 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/brain': typeof BrainRoute
   '/contact': typeof ContactRoute
   '/craft': typeof CraftRoute
   '/experience': typeof ExperienceRoute
@@ -82,7 +74,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/brain': typeof BrainRoute
   '/contact': typeof ContactRoute
   '/craft': typeof CraftRoute
   '/experience': typeof ExperienceRoute
@@ -94,7 +85,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/brain'
     | '/contact'
     | '/craft'
     | '/experience'
@@ -104,7 +94,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/brain'
     | '/contact'
     | '/craft'
     | '/experience'
@@ -114,7 +103,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/brain'
     | '/contact'
     | '/craft'
     | '/experience'
@@ -125,7 +113,6 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  BrainRoute: typeof BrainRoute
   ContactRoute: typeof ContactRoute
   CraftRoute: typeof CraftRoute
   ExperienceRoute: typeof ExperienceRoute
@@ -178,13 +165,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/brain': {
-      id: '/brain'
-      path: '/brain'
-      fullPath: '/brain'
-      preLoaderRoute: typeof BrainRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -197,7 +177,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  BrainRoute: BrainRoute,
   ContactRoute: ContactRoute,
   CraftRoute: CraftRoute,
   ExperienceRoute: ExperienceRoute,

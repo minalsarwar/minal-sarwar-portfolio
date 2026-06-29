@@ -34,7 +34,7 @@ function ContactPage() {
     },
     {
       label: "Resume",
-      value: "View on Drive",
+      value: "View",
       href: "https://drive.google.com/file/d/1wNY9-R5WT5z5MReCXk9gaR9yg00tDrjl/view?usp=sharing",
     },
   ];

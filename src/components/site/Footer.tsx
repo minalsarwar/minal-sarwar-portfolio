@@ -44,11 +44,6 @@ export function Footer() {
                   Resume <ArrowUpRight size={12} />
                 </a>
               </li>
-              <li>
-                <Link to="/contact" className="text-muted-foreground transition-colors hover:text-foreground">
-                  Contact
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

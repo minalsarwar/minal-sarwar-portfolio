@@ -45,7 +45,7 @@ const roles = [
   {
     company: "Ignite Labs",
     role: "Business Analyst Intern",
-    range: "Summer 2022",
+    range: "Summer 2023",
     summary:
       "Defined product features and end to end CRM journeys with the team, first taste of what product would later become.",
     pillars: [
@@ -67,10 +67,6 @@ function ExperiencePage() {
             Three rooms,
             <span className="italic bg-gradient-to-r from-lavender to-pink-400 bg-clip-text text-transparent"> one through line</span>.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Different titles, same instinct: figure out what people actually
-            need, then quietly make the path shorter.
-          </p>
         </Reveal>
       </section>
 
