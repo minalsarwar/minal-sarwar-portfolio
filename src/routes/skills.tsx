@@ -1,5 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
+import {
+  CloudRain,
+  Camera,
+  UtensilsCrossed,
+  Sparkles,
+  BookOpen,
+  Sparkle,
+  Palette,
+  Plane,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { PageWrap, Reveal, SectionLabel } from "../components/site/Reveal";
 
 export const Route = createFileRoute("/skills")({
@@ -126,24 +137,31 @@ function SkillsPage() {
         </Reveal>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {[
-            ["🌧️", "Rain instantly improves my mood."],
-            ["📱", "I unintentionally analyse every app I use."],
-            ["✨", "Tiny UX details make me ridiculously happy."],
-            ["📷", "I enjoy photography and creative edits."],
-            ["🍜", "Good food has solved more bad days than I’d like to admit."],
-            ["🕯️", "I collect anything artsy, crafty, vintage. The older it looks, the better."],
-            ["📚", "Dark thrillers are my comfort genre. Gone Girl had me hooked far too late at night."],
-            ["💡", "New found passion: vibe coding my way through every idea I get."],
-            ["❓", "My favourite product conversations usually start with ‘why?’"],
-          ].map(([emoji, text], i) => (
+          {([
+            [CloudRain, "Rain instantly improves my mood."],
+            [Camera, "I enjoy photography and creative edits."],
+            [UtensilsCrossed, "Good food has solved more bad days than I’d like to admit."],
+            [Sparkles, "I collect anything artsy, crafty, pinteresty, vintage."],
+            [BookOpen, "Dark thrillers are a new comfort genre. Gone Girl had me hooked far too late at night."],
+            [Sparkle, "New found passion: vibe coding my way through every idea I get."],
+            [Palette, "A canvas, some paint, and suddenly I’m an artist for the afternoon. I love painting my emotions out."],
+            [Plane, "Lively, a little crazy, very into travelling. Mountains, beaches, in between, count me in."],
+          ] as [LucideIcon, string][]).map(([Icon, text], i) => (
             <Reveal key={text} delay={i * 0.04}>
               <div
                 className="group relative h-full overflow-hidden rounded-3xl border border-lavender/20 bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-lavender/40 hover:shadow-float"
                 data-cursor="hover"
               >
                 <div className="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-lavender/20 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
-                <span className="text-3xl">{emoji}</span>
+                <span
+                  className="inline-grid h-11 w-11 place-items-center rounded-2xl text-white shadow-soft"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #C8B6FF 0%, #F9A8D4 50%, #7DD3FC 100%)",
+                  }}
+                >
+                  <Icon size={20} strokeWidth={2.25} />
+                </span>
                 <p className="mt-4 font-display text-xl leading-snug tracking-tight text-balance">
                   {text}
                 </p>
