@@ -7,17 +7,8 @@ import { PageWrap, Reveal, SectionLabel } from "../components/site/Reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Minal — Associate Product Manager" },
-      {
-        name: "description",
-        content:
-          "Minal is an Associate Product Manager shipping thoughtful products across web and mobile. A portfolio of considered product work.",
-      },
-      { property: "og:title", content: "Minal — Associate Product Manager" },
-      {
-        property: "og:description",
-        content: "Thoughtful product work at the intersection of users, business and engineering.",
-      },
+      { title: "Minal Sarwar | Portfolio" },
+      { property: "og:title", content: "Minal Sarwar | Portfolio" },
     ],
   }),
   component: Index,
@@ -26,8 +17,6 @@ export const Route = createFileRoute("/")({
 const questions = [
   "What makes people love a product?",
   "Why do some experiences just… feel right?",
-  "Where do business goals meet user needs?",
-  "What turns a feature into a habit?",
 ];
 
 const headlines = [
