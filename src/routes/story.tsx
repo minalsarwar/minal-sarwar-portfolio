@@ -68,8 +68,6 @@ const chapters = [
     body:
       "Something that asks better questions. Something that takes craft seriously. Coffee chats welcome.",
     accent: "To be continued.",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5612AQH9uIQNd_kMAg/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1688675969171?e=2147483647&v=beta&t=SvkewI47pyJchqmarZUOoLE_otAMI4sfvIQpVYuxa0w",
   },
 ];
 
