@@ -95,6 +95,33 @@ function StoryPage() {
           <ul className="space-y-12 sm:space-y-20">
             {chapters.map((c, i) => {
               const left = i % 2 === 0;
+              const hasImage = "image" in c && c.image;
+              if (!hasImage) {
+                return (
+                  <li key={c.title} className="relative">
+                    <Reveal y={30}>
+                      <div className="mx-auto max-w-2xl text-center">
+                        <p className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                          {c.year}
+                        </p>
+                        <h2 className="mt-2 font-display text-3xl tracking-tight sm:text-4xl">
+                          {c.title}
+                        </h2>
+                        <p className="mt-1 text-sm text-muted-foreground">{c.place}</p>
+                        <p className="mt-4 text-base leading-relaxed text-foreground/80">
+                          {c.body}
+                        </p>
+                        <p className="mt-3 font-display text-lg italic text-lavender">
+                          {c.accent}
+                        </p>
+                      </div>
+                    </Reveal>
+                    <div className="pointer-events-none absolute left-[14px] top-2 hidden h-3 w-3 rounded-full border border-border bg-background sm:left-1/2 sm:block sm:-translate-x-1/2">
+                      <span className="absolute inset-[3px] rounded-full bg-lavender" />
+                    </div>
+                  </li>
+                );
+              }
               return (
                 <li key={c.title} className="relative">
                   <div className={`grid gap-6 sm:grid-cols-2 sm:gap-12 ${left ? "" : "sm:[&>*:first-child]:order-2"}`}>
@@ -123,11 +150,11 @@ function StoryPage() {
                       >
                         <div className="absolute inset-0 bg-gradient-to-br from-lavender/20 via-pink-100/30 to-sky-100/20 dark:from-lavender/15 dark:via-pink-500/5 dark:to-sky-500/5" />
                         <img
-                          src={c.image}
+                          src={(c as { image: string }).image}
                           alt={`${c.title} at ${c.place}`}
                           loading="lazy"
                           className={`absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105 ${
-                            c.contain ? "object-contain p-10" : "object-cover"
+                            "contain" in c && c.contain ? "object-contain p-10" : "object-cover"
                           }`}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
