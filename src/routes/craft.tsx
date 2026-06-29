@@ -31,26 +31,30 @@ const projects: Project[] = [
     name: "NayaPay Business Portal",
     role: "Associate Product Manager · Web",
     overview:
-      "Web operations hub for NayaPay Business merchants. Spearheaded the Sales module (invoicing and payment links) from scratch and shipped Transactions, Approvals and Merchant Payments with partners like StormFiber, Fly Jinnah and M-Tag.",
+      "Web operations hub for NayaPay Business merchants. Spearheaded the Sales module (invoicing and payment links) end to end and shipped Transactions, Approvals and Merchant Payments integrating major partners like StormFiber, Fly Jinnah and M-Tag. Also led the rebranding of major modules across the portal and contributed to Disbursements as an upcoming feature.",
     problem:
-      "Owners and operators needed a calm, trustworthy place to run their money, without the heaviness of legacy banking dashboards.",
+      "Business owners and teams, from sole proprietors to LLP and partnership setups, small businesses to enterprise level, were looking for one calm place to manage expenses, bills, invoicing, business cards and team usage. They needed a proper approval hierarchy and defined user roles like admin, finance, sales and approver, each with the right functions, without the heaviness of legacy banking dashboards.",
     process:
-      "Market research, competitor teardowns, 50+ Figma wireframes, PRDs, prioritisation in Redmine across 100+ tickets, and weekly design partnership.",
+      "Market research, competitor teardowns, 50+ Figma wireframes mapping user flows across modules, detailed PRDs, prioritisation in Redmine across 100+ tickets, Notion for documentation and Excel for data analysis, with weekly partnership across design, dev and marketing.",
     outcome:
-      "Sales launched end to end. Onboarded 20+ alpha merchants with feedback loops that lifted usability roughly 10% on key modules pre launch.",
+      "Sales shipped from scratch including research, wireframes, launch and testing. Rigorous iteration across most modules, a portal-wide rebrand, more merchants onboarded, and the product moved noticeably closer to going live for business.",
+    link: {
+      href: "https://www.nayapay.com/business",
+      label: "Product overview · NayaPay Business",
+    },
   },
   {
     n: "02",
     name: "NayaPay Business App",
     role: "Associate Product Manager · Mobile",
     overview:
-      "Mobile companion for owners on the move. Shipped every module from scratch: dashboard, sign up, onboarding, splash, transactions, cards and approvals, with detailed PRDs and tickets.",
+      "A more accessible form of the portal, on the phone. Shipped every module from scratch including dashboard, sign up, onboarding, splash screen, transactions, cards and approvals, with detailed PRDs and tickets.",
     problem:
-      "Mobile is where business owners actually live. The portal didn’t feel right on a phone, and shouldn’t.",
+      "Once merchants signed up on the portal, they needed quick approvals, a fast review of transactions and a clean overview of expense management while on the go. Core functionality like onboarding stayed on the portal, but the app had to make the daily essentials feel one tap away.",
     process:
-      "Mobile first rethinking of the core flows. Wireframes, prioritised backlog, alpha cohorts, and post launch listening with the team.",
+      "Mobile first rethinking of the core flows, wireframes, prioritised backlog, alpha cohorts and post launch listening with the team.",
     outcome:
-      "A native feeling app with thoughtful empty states and the kind of microcopy that quietly builds trust.",
+      "A native feeling companion app with thoughtful empty states, quick actions for approvals and review, and microcopy that quietly builds trust between sessions.",
   },
   {
     n: "03",
@@ -70,13 +74,13 @@ const projects: Project[] = [
     name: "Revamping SureCompute Website",
     role: "Product · Brand · IA",
     overview:
-      "Full reimagining of the SureCompute marketing site, content strategy, IA and a refreshed brand surface.",
+      "Full reimagining of the SureCompute marketing site, content strategy, IA, SEO and a refreshed brand surface.",
     problem:
-      "A growing company stuck behind a website that no longer reflected what they did.",
+      "A growing company stuck behind a website that no longer reflected what they did, with no real story for their plans or services.",
     process:
-      "Content audit, IA reshuffle, wireframes, design partnership and a launch plan.",
+      "Competitor analysis of Hostinger and similar services, proper SEO pass, wireframing and ideation on Figma, sitting with designers to modify the look and feel of the UI, and designing the pricing plans UI as a new feature from scratch before handing it over for refinement.",
     outcome:
-      "A site that actually invites people in, and gives sales a story they can point to.",
+      "A site that actually invites people in, a clearer pricing story, and a brand surface sales can finally point to.",
   },
   {
     n: "05",
