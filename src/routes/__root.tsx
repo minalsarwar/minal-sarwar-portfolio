@@ -80,6 +80,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Minal Sarwar | Portfolio" },
       { name: "twitter:image", content: "/__l5e/assets-v1/196cf2b7-f99b-4107-aca3-7c6068f5d0d9/minal-og.jpg" },
+      { name: "description", content: "Review Minal's Portfolio" },
+      { property: "og:description", content: "Review Minal's Portfolio" },
+      { name: "twitter:description", content: "Review Minal's Portfolio" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
