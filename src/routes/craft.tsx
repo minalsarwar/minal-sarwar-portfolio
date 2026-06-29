@@ -138,46 +138,102 @@ function CraftPage() {
       <section className="mx-auto max-w-6xl px-6 pb-32">
         <ul className="space-y-6">
           {projects.map((p, i) => (
-            <Reveal key={p.name} delay={i * 0.03}>
-              <article
-                className="group relative overflow-hidden rounded-[2rem] border border-lavender/20 bg-card p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-lavender/40 hover:shadow-float sm:p-10"
-                data-cursor="hover"
-              >
-                <div
-                  className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
-                  style={{ background: "color-mix(in oklab, var(--lavender) 60%, transparent)" }}
-                />
+            <div key={p.name}>
+              <Reveal delay={i * 0.03}>
+                <article
+                  className="group relative overflow-hidden rounded-[2rem] border border-lavender/20 bg-card p-7 transition-all duration-500 hover:-translate-y-0.5 hover:border-lavender/40 hover:shadow-float sm:p-10"
+                  data-cursor="hover"
+                >
+                  <div
+                    className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-60"
+                    style={{ background: "color-mix(in oklab, var(--lavender) 60%, transparent)" }}
+                  />
 
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
-                    Project · {p.n}
-                  </span>
-                </div>
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                      Project · {p.n}
+                    </span>
+                  </div>
 
-                <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
-                  {p.name}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
+                  <h2 className="mt-6 font-display text-3xl leading-tight tracking-tight sm:text-5xl">
+                    {p.name}
+                  </h2>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.role}</p>
 
-                <dl className="mt-8 grid gap-5 sm:grid-cols-2">
-                  <Field term="Overview" desc={p.overview} />
-                  <Field term="Problem" desc={p.problem} />
-                  <Field term="Process" desc={p.process} />
-                  <Field term="Outcome" desc={p.outcome} />
-                </dl>
+                  <dl className="mt-8 grid gap-5 sm:grid-cols-2">
+                    <Field term="Overview" desc={p.overview} />
+                    <Field term="Problem" desc={p.problem} />
+                    <Field term="Process" desc={p.process} />
+                    <Field term="Outcome" desc={p.outcome} />
+                  </dl>
 
-                {p.link && (
-                  <a
-                    href={p.link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 transition-colors hover:decoration-lavender"
-                  >
-                    {p.link.label} <ArrowUpRight size={14} />
-                  </a>
-                )}
-              </article>
-            </Reveal>
+                  {p.link && (
+                    <a
+                      href={p.link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 transition-colors hover:decoration-lavender"
+                    >
+                      {p.link.label} <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                </article>
+              </Reveal>
+
+              {p.n === "02" && (
+                <Reveal delay={0.05} className="mt-6">
+                  <div className="rounded-[2rem] border border-lavender/30 bg-gradient-to-br from-lavender/15 via-pink-100/25 to-sky-100/20 p-7 dark:from-lavender/10 dark:via-pink-500/5 dark:to-sky-500/5 sm:p-10">
+                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-lavender">
+                      Highlights · during my tenure
+                    </span>
+                    <h3 className="mt-4 font-display text-2xl leading-snug tracking-tight sm:text-3xl">
+                      Two moments I’ll quietly carry with me.
+                    </h3>
+                    <ul className="mt-6 grid gap-5 sm:grid-cols-2">
+                      <li className="rounded-2xl border border-lavender/20 bg-background/50 p-5">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-lavender">2024</p>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground/85">
+                          NayaPay was featured on the{" "}
+                          <a
+                            href="https://www.nayapay.com/news/nayapay-recognized-among-forbes-asia-100-to-watch"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 hover:decoration-lavender"
+                          >
+                            Forbes Asia 100 to Watch
+                          </a>{" "}
+                          list.
+                        </p>
+                      </li>
+                      <li className="rounded-2xl border border-lavender/20 bg-background/50 p-5">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-lavender">2025</p>
+                        <p className="mt-2 text-sm leading-relaxed text-foreground/85">
+                          NayaPay{" "}
+                          <a
+                            href="https://www.nayapay.com/news/NayaPay-Reborn"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 hover:decoration-lavender"
+                          >
+                            rebranded
+                          </a>{" "}
+                          both consumer and business verticals around the theme “We’ve gone electric”, and was awarded{" "}
+                          <a
+                            href="https://www.nayapay.com/news/nayapay-wins-emerging-brand-of-the-year-2025"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-medium text-lavender underline decoration-lavender/40 decoration-2 underline-offset-4 hover:decoration-lavender"
+                          >
+                            Emerging Brand of the Year 2025
+                          </a>{" "}
+                          by Brands Foundation, Pakistan’s premier non profit organisation.
+                        </p>
+                      </li>
+                    </ul>
+                  </div>
+                </Reveal>
+              )}
+            </div>
           ))}
         </ul>
 
