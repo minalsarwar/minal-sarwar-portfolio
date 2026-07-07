@@ -46,18 +46,14 @@ function Hero() {
 
   useEffect(() => {
     if (reduce) { setStage("intro"); return; }
-    const id = setInterval(() => {
-      setQIdx((i) => {
-        if (i + 1 >= questions.length) {
-          setTimeout(() => setStage("intro"), 1800);
-          clearInterval(id);
-          return i + 1;
-        }
-        return i + 1;
-      });
-    }, 2200);
-    return () => clearInterval(id);
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    for (let i = 1; i < questions.length; i++) {
+      timers.push(setTimeout(() => setQIdx(i), i * 2200));
+    }
+    timers.push(setTimeout(() => setStage("intro"), questions.length * 2200));
+    return () => timers.forEach(clearTimeout);
   }, [reduce]);
+
 
   return (
     <section className="relative overflow-hidden pt-40 pb-32 sm:pt-48 sm:pb-40">
