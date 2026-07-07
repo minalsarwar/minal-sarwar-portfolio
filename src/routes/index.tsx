@@ -46,18 +46,14 @@ function Hero() {
 
   useEffect(() => {
     if (reduce) { setStage("intro"); return; }
-    const id = setInterval(() => {
-      setQIdx((i) => {
-        if (i + 1 >= questions.length) {
-          setTimeout(() => setStage("intro"), 1800);
-          clearInterval(id);
-          return i + 1;
-        }
-        return i + 1;
-      });
-    }, 2200);
-    return () => clearInterval(id);
+    const timers: ReturnType<typeof setTimeout>[] = [];
+    for (let i = 1; i < questions.length; i++) {
+      timers.push(setTimeout(() => setQIdx(i), i * 2200));
+    }
+    timers.push(setTimeout(() => setStage("intro"), questions.length * 2200));
+    return () => timers.forEach(clearTimeout);
   }, [reduce]);
+
 
   return (
     <section className="relative overflow-hidden pt-40 pb-32 sm:pt-48 sm:pb-40">
@@ -96,9 +92,9 @@ function Hero() {
                 <p className="text-sm font-medium uppercase tracking-[0.22em] text-lavender">
                   Hi, I’m Minal.
                 </p>
-                <h1 className="mt-4 font-display text-[clamp(3rem,9vw,7rem)] leading-[0.95] tracking-tight text-balance">
-                  <span className="italic bg-gradient-to-r from-lavender via-pink-400 to-sky-400 bg-clip-text text-transparent">Product</span>{" "}
-                  Manager
+                <h1 className="mt-3 font-display text-[clamp(2.5rem,6.5vw,5rem)] leading-[1.02] tracking-tight text-balance">
+                  <span className="italic bg-gradient-to-r from-lavender via-pink-400 to-sky-400 bg-clip-text text-transparent">Building</span>{" "}
+                  thoughtful digital experiences
                   <span className="ml-2 inline-block h-3 w-3 translate-y-[-0.6em] rounded-full bg-lavender align-middle" />
                 </h1>
               </motion.div>
@@ -107,7 +103,7 @@ function Hero() {
         </div>
 
 
-        <div className="mt-12 grid gap-10 md:grid-cols-[1.4fr_1fr]">
+        <div className="mt-6 grid gap-10 md:grid-cols-[1.4fr_1fr]">
           <Reveal delay={0.2}>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               I’m a Computer Science grad from{" "}
@@ -124,19 +120,13 @@ function Hero() {
           <Reveal delay={0.35} className="md:justify-self-end">
             <div className="flex flex-col gap-3">
               <Link
-                to="/craft"
-                className="group inline-flex items-center justify-between gap-6 rounded-full bg-foreground px-5 py-3 text-sm font-medium text-background transition-transform hover:-translate-y-0.5"
-              >
-                See things I’ve built
-                <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
-              <Link
                 to="/story"
                 className="group inline-flex items-center justify-between gap-6 rounded-full border border-lavender/40 bg-card/60 px-5 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-lavender/15"
               >
                 Read the story
                 <ArrowUpRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
+
             </div>
           </Reveal>
         </div>
@@ -248,9 +238,9 @@ function FeaturedWork() {
         <Reveal>
           <SectionLabel>Selected craft</SectionLabel>
           <h2 className="max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-balance sm:text-6xl">
-            Things I’ve built,
-            <span className="italic bg-gradient-to-r from-lavender to-sky-400 bg-clip-text text-transparent"> in their own words</span>.
+            <span className="italic bg-gradient-to-r from-lavender to-sky-400 bg-clip-text text-transparent">Built</span> &amp; Shipped
           </h2>
+
         </Reveal>
         <Reveal delay={0.1}>
           <Link
