@@ -9,6 +9,7 @@ import {
   Sparkle,
   Palette,
   Plane,
+  MapPin,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { PageWrap, Reveal, SectionLabel } from "../components/site/Reveal";
