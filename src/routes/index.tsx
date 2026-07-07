@@ -238,9 +238,9 @@ function FeaturedWork() {
         <Reveal>
           <SectionLabel>Selected craft</SectionLabel>
           <h2 className="max-w-2xl font-display text-4xl leading-[1.05] tracking-tight text-balance sm:text-6xl">
-            Things I’ve built,
-            <span className="italic bg-gradient-to-r from-lavender to-sky-400 bg-clip-text text-transparent"> in their own words</span>.
+            <span className="italic bg-gradient-to-r from-lavender to-sky-400 bg-clip-text text-transparent">Built</span> &amp; Shipped
           </h2>
+
         </Reveal>
         <Reveal delay={0.1}>
           <Link
