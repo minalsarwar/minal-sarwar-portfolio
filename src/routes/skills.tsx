@@ -143,10 +143,11 @@ function SkillsPage() {
             [Camera, "I enjoy photography and creative edits."],
             [UtensilsCrossed, "Good food has solved more bad days than I’d like to admit."],
             [Sparkles, "I collect anything artsy, crafty, pinteresty, vintage."],
-            [BookOpen, "Dark thrillers are a new comfort genre. Gone Girl had me hooked far too late at night."],
+            [BookOpen, "Dark thrillers have quietly become my comfort genre."],
             [Sparkle, "New found passion: vibe coding my way through every idea I get."],
-            [Palette, "A canvas, some paint, and suddenly I’m an artist for the afternoon. I love painting my emotions out."],
-            [Plane, "Lively, a little crazy, very into travelling. Mountains, beaches, in between, count me in."],
+            [Palette, "A canvas, some paint, and a little room to breathe."],
+            [Plane, "Always up for spontaneous adventures."],
+            [MapPin, "Mountains, beaches, or anywhere in between."],
           ] as [LucideIcon, string][]).map(([Icon, text], i) => (
             <Reveal key={text} delay={i * 0.04}>
               <div
