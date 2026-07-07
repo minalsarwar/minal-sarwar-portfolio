@@ -67,7 +67,7 @@ function Hero() {
       <div className="pointer-events-none absolute inset-0 -z-10 grain" />
 
       <div className="mx-auto max-w-6xl px-6">
-        <div className="min-h-[260px] sm:min-h-[320px]">
+        <div className="min-h-[210px] sm:min-h-[270px]">
           <AnimatePresence mode="wait">
             {stage === "questions" ? (
               <motion.h1
@@ -97,13 +97,15 @@ function Hero() {
                   thoughtful digital experiences
                   <span className="ml-2 inline-block h-3 w-3 translate-y-[-0.6em] rounded-full bg-lavender align-middle" />
                 </h1>
+                <p className="mt-2 text-sm font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                  Product &nbsp;•&nbsp; Strategy &nbsp;•&nbsp; UX
+                </p>
               </motion.div>
             )}
           </AnimatePresence>
         </div>
 
-
-        <div className="mt-6 grid gap-10 md:grid-cols-[1.4fr_1fr]">
+        <div className="mt-3 grid gap-10 md:grid-cols-[1.4fr_1fr]">
           <Reveal delay={0.2}>
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
               I’m a Computer Science grad from{" "}
